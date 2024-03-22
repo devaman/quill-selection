@@ -189,9 +189,9 @@ Mention blots can also be dynamically styled from data attributes, but requires
 implement a custom Quill blot. For example:
 
 ```javascript
-const MentionBlot = Quill.import("blots/mention");
+const SelectionBlot = Quill.import("blots/selection");
 
-class StyledMentionBlot extends MentionBlot {
+class StyledMentionBlot extends SelectionBlot {
   static render(data) {
     const element = document.createElement('span');
     element.innerText = data.value;
@@ -221,16 +221,6 @@ const quill = new Quill('#editor', {
 ### Headers and Informational Items
 
 Sometimes you may want to display a menu item that should not be selectable. These items may be group headers, hint text, or even a message saying there were no matching results. To show items like these, add `disabled:true` to items passed to `renderList` from your `source` method. Disabled items are shown but not selectable with the mouse or keyboard. If you need to style the disabled items differently, you will need to override the `renderItem` method.
-
-### Upgrade Notes
-
-As of 4.0.0, HTML embedded in `value` will no longer be rendered, due to potential XSS issues. Instead, to adjust rendering of list items, you can return a class implementing the [Node](https://developer.mozilla.org/en-US/docs/Web/API/Node) interface which will be treated as a sanitized DOM node, and in order to customize blot rendering, you will need to create a [custom mention blot](https://github.com/quill-mention/quill-mention#mention-blot-styling)
-
-## Authors
-
-**Fredrik Sundqvist** ([MadSpindel](https://github.com/MadSpindel))
-
-See also the list of [contributors](https://github.com/quill-mention/quill-mention/contributors) who participated in this project.
 
 ## License
 
