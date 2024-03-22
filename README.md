@@ -1,17 +1,13 @@
-![Quill Mention](docs/static/quill-mention.png "Quill Mention")
 
-# Quill Mention
+# Quill Selection
 
-[![npm version](https://badge.fury.io/js/quill-mention.svg)](https://badge.fury.io/js/quill-mention)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Quill Mention is a module to provide @mentions or #hashtag functionality for the [Quill](https://quilljs.com/) rich text editor.
+Quill Selection is a module to provide selection and show dropdown functionality for the [Quill](https://quilljs.com/) rich text editor.
 
 ## Demo
 
-https://quill-mention.com/
 
-![Mention Demo GIF](docs/static/mention.gif "Mention Demo GIF")
 
 ## Getting Started
 
@@ -20,31 +16,31 @@ https://quill-mention.com/
 Install with npm:
 
 ```bash
-npm install quill-mention --save
+npm install quill-selection --save
 ```
 
 Install with [Yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn add quill-mention
+yarn add quill-selection
 ```
 
 ### Import package
 
 ```javascript
-import "quill-mention";
+import "quill-Selection";
 // or
-require("quill-mention");
+require("quill-selection");
 ```
 
-Importing quill-mention automatically adds it to Quill modules.
+Importing quill-selection automatically adds it to Quill modules.
 
-Now you only need to pass quill-mention config to quill.
+Now you only need to pass quill-selection config to quill.
 
 ### Example
 
 ```javascript
-import "quill-mention";
+import "quill-selection";
 
 const atValues = [
   { id: 1, value: "Fredrik Sundqvist" },
@@ -87,8 +83,8 @@ const quill = new Quill("#editor", {
 
 ### Hover and Click Example
 ```javascript
-  window.addEventListener('mention-hovered', (event) => {console.log('hovered: ', event)}, false);
-  window.addEventListener('mention-clicked', (event) => {console.log('hovered: ', event)}, false);
+  window.addEventListener('selection-hovered', (event) => {console.log('hovered: ', event)}, false);
+  window.addEventListener('selection-clicked', (event) => {console.log('hovered: ', event)}, false);
 ```
 
 ### Async example
@@ -123,7 +119,7 @@ const quill = new Quill("#editor", {
 ```
 
 **Note**: if you whitelist quill formats via ["formats" option](https://quilljs.com/docs/configuration/#formats),
-you need to add the mention format (default: "mention") there. Another way quill-mention won't work.
+you need to add the selection format (default: "selection") there. Another way quill-selection won't work.
 Here's an example with whitelisted formats:
 
 ```javascript
